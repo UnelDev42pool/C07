@@ -1,55 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edi-iori <edi-iori@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 09:47:26 by edi-iori          #+#    #+#             */
-/*   Updated: 2023/07/11 11:29:16 by edi-iori         ###   ########lyon.fr   */
+/*   Created: 2023/07/11 14:59:30 by edi-iori          #+#    #+#             */
+/*   Updated: 2023/07/11 16:28:59 by edi-iori         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char	*ft_strcpy(char *dest, char *src)
+int	ft_ultimate_range(int **range, int min, int max)
 {
 	int	i;
+	int	*buffer;
 
+	if (min == max)
+		return (0);
+	buffer = malloc(max - min);
 	i = 0;
-	while (src[i] != '\0')
+	while (min + i < max)
 	{
-		dest[i] = src[i];
+		buffer[i] = min + i;
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
-}
-
-int	ft_str_len(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
+	*range = buffer;
 	return (i);
 }
-
-char	*ft_strdup(char *src)
-{
-	char	*ptr;
-
-	ptr = malloc(ft_str_len(src) * sizeof(char));
-	ft_strcpy(ptr, src);
-	return (ptr);
-}
-
 // #include <stdio.h>
 // int main()
 // {
-// 	char *truc = ft_strdup("hello world");
-// 	printf("%s", truc);
+// 	int **coucou;
+// 	int truc = ft_ultimate_range(coucou, 5, 10);
+// 	printf("%d", *coucou[0]);
+// 	return (0);
 // }
