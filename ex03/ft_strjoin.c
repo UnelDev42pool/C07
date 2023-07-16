@@ -25,7 +25,7 @@ void	add_str(char *dest, char *src, int *construct_i)
 	}
 }
 
-void ft_size(int size, int *final_size, char **strs, char *sep)
+void	ft_size(int size, int *final_size, char **strs, char *sep)
 {
 	int	i;
 
@@ -57,7 +57,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	while (i < size)
 	{
 		add_str(buffer, strs[i], &final_size);
-		if ( i != size -1)
+		if (i != size -1)
 		{
 			add_str(buffer, sep, &final_size);
 		}
