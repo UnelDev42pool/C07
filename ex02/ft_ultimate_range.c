@@ -6,7 +6,7 @@
 /*   By: edi-iori <edi-iori@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 14:59:30 by edi-iori          #+#    #+#             */
-/*   Updated: 2023/07/11 16:28:59 by edi-iori         ###   ########lyon.fr   */
+/*   Updated: 2023/07/17 10:25:17 by edi-iori         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,17 @@ int	ft_ultimate_range(int **range, int min, int max)
 	int	i;
 	int	*buffer;
 
-	if (min == max)
+	if (min >= max)
+	{
+		*range = NULL;
 		return (0);
+	}
 	buffer = malloc(max - min);
+	if (!buffer)
+	{	
+		*range = NULL;
+		return (0);
+	}
 	i = 0;
 	while (min + i < max)
 	{
@@ -33,7 +41,7 @@ int	ft_ultimate_range(int **range, int min, int max)
 // int main()
 // {
 // 	int **coucou;
-// 	int truc = ft_ultimate_range(coucou, 5, 10);
+// 	int truc = ft_ultimate_range(coucou, 11, 10);
 // 	printf("%d", *coucou[0]);
 // 	return (0);
 // }
