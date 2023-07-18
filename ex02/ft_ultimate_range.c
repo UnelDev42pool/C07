@@ -6,7 +6,7 @@
 /*   By: edi-iori <edi-iori@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 14:59:30 by edi-iori          #+#    #+#             */
-/*   Updated: 2023/07/18 10:32:29 by edi-iori         ###   ########lyon.fr   */
+/*   Updated: 2023/07/18 11:11:03 by edi-iori         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_ultimate_range(int **range, int min, int max)
 	if (!buffer)
 	{	
 		*range = NULL;
-		return (0);
+		return (-1);
 	}
 	i = 0;
 	while (min + i < max)
@@ -40,8 +40,12 @@ int	ft_ultimate_range(int **range, int min, int max)
 // #include <stdio.h>
 // int main()
 // {
-// 	int **coucou;
-// 	int truc = ft_ultimate_range(coucou, 11, 10);
-// 	printf("%d", *coucou[0]);
+// 	int *coucou[15];
+// 	int truc = ft_ultimate_range(coucou, 9, 10);
+// 	if (*coucou)
+// 	{
+// 		printf("%d\n", *coucou[0]);
+// 	}
+// 	printf("%d", truc);
 // 	return (0);
 // }
