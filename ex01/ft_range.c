@@ -6,7 +6,7 @@
 /*   By: edi-iori <edi-iori@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 11:30:33 by edi-iori          #+#    #+#             */
-/*   Updated: 2023/07/17 10:26:02 by edi-iori         ###   ########lyon.fr   */
+/*   Updated: 2023/07/18 10:32:06 by edi-iori         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	*ft_range(int min, int max)
 	{	
 		return (NULL);
 	}
-	ptr = malloc(max - min);
+	ptr = malloc((max - min) * sizeof (int));
 	while (i < max - min)
 	{
 		ptr[i] = i + min;
